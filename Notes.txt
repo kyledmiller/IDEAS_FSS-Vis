@@ -52,6 +52,14 @@
 
     Highlight interesting data so the reader's eye goes to the right place
 
+### Plotly ###
+##############
+    - export to html
+    - 
+
+### Bokeh ###
+#############
+    - export to html
 
 
 ### Project Ideas ###
