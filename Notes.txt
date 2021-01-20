@@ -1,0 +1,63 @@
+### Extra hot tips ###
+######################
+
+    Open circle is the best for aggregate data
+    Ensure strong visual boundaries for different symbols plotted (circle, plus, star, carrot)
+    Make different navigational elements visually distinct
+    Use shapes before color
+        - Use color semantically if possible
+        - avoid color if it introduces false relations
+    Use horizontal charts for long labels
+    Highlight interesting data so the reader's eye goes to the right place
+
+### Introduction/Elements of Style ###
+######################################
+ 
+    Narrative
+        - visualizations should serve the story
+        - There should be only one conlcusion to be drawn from a figure
+
+    Pre-/post-attentive
+        - does my figure require a "serial search" / does it have conjunction target
+        - Try to have only 1 unique pattern/characteristic that people can notice
+
+    Gestalt Principles
+        - Figure/ground
+        - Similar shape, size
+        - Proximity
+        - Connection
+        - Common region - objects in the same closed region are grouped
+        - Continuity
+        - Enclosure
+        - Focal point
+
+    Salient features <==> STAND OUT
+
+    Make different navigational elements visually distinct
+
+    Use shapes before color -- Use color semantically if possible
+
+    Best/summary info should be the FIRST in the caption
+
+
+### Matplotlib ###
+##################
+
+    (PROJECT) --> phonon plot 
+        - make horizontal
+        - find way to indicate degeneracy
+        - color negative modes to stand out
+
+    Use horizontal charts for long labels
+
+    Highlight interesting data so the reader's eye goes to the right place
+
+
+
+### Project Ideas ###
+#####################
+
+    Interactive visualization with GII data
+        - create Ashby plots (open circle) with any two variables
+        - be able to click on stuff to get more info
+
