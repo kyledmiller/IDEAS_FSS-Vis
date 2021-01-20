@@ -58,6 +58,7 @@
 #####################
 
     Interactive visualization with GII data
+        - Bokeh -- see Bokey_exercises
         - create Ashby plots (open circle) with any two variables
         - be able to click on stuff to get more info
 
