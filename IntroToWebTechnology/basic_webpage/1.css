@@ -1,3 +1,9 @@
 body {
-	color:red;
-}
+    color:red;
+  }
+  .blueclass{/*Class is for use on many things*/
+    color:blue
+  }
+  #greenid{/*id is for use on few things -- overrides class*/
+    color:green
+  }

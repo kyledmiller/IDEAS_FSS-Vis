@@ -9,11 +9,9 @@ var margin = {top: 50, right: 50, bottom: 50, left: 50},
 //define some colors (https://github.com/d3/d3-scale-chromatic)
 var colorMap = d3.scaleOrdinal(d3.schemeSet1);
 
-var x, y
+function init(inputData){
 
-function init(inputData, year){
-
-	data = inputData.filter(function(d) {return d.party_code == 100 || d.party_code == 200 || d.party_code == 328 });
+	data = inputData;
 	console.log(data);
 
 	// now create the svg element
@@ -26,8 +24,8 @@ function init(inputData, year){
 			.attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
 	//define the scales: these will convert from pixels to data units
-	x = d3.scaleLinear().range([0, width]);
-	y = d3.scaleLinear().range([height, 0]);
+	var x = d3.scaleLinear().range([0, width]);
+	var y = d3.scaleLinear().range([height, 0]);
 
 	//nice does what it sounds like : gives you nice round values 
 	//creates a domain and range for the plot
@@ -50,6 +48,7 @@ function init(inputData, year){
 		.attr("x", width -20) //"x", "y" are page positions
 		.attr("y", 40)
 		.style("text-anchor", "end")
+		// .style("font-size", "20px")
 		.text("Fiscally Conservative Lean");
 
 	svg.append("g")
@@ -62,30 +61,17 @@ function init(inputData, year){
 		.attr("y", -50)
 		.attr("dy", ".71em")
 		.style("text-anchor", "end")
+		// .style("font-size", "20px")
 		.text("Socially Progressive Lean")
 
-	//add slider
-	var slider = document.getElementById("myRange");
-
-	// Update the current slider value (each time you drag the slider handle)
-	slider.oninput = function() {
-		populateScatter(x, y, this.value);
-	}
-
-	var slidecontainer = d3.select('#slidecontainer');
-	slidecontainer.append("label")
-		.attr('for', 'congress_num')
-		.style('display','inline-block')
-		.style('width','150px')
-		.style('text-align','left')
-		.html('Congress #<span id="congress_num"></span>');
 
 	//add the data and the legend to the scatter plot
 	populateScatter(x, y)
+
+
 }
 
-
-function populateScatter(x, y, congress_num=114){
+function populateScatter(x, y){
 
 	legend_dict={ 
 		200:"Republican", 
@@ -94,12 +80,6 @@ function populateScatter(x, y, congress_num=114){
    };
 
 	var svg = d3.select('#scatterSVG'); //could have been passed as global variable
-	
-	svg.selectAll(".dot").remove() //for when we use this function to update the plot
-	svg.selectAll(".legend").remove() //for when we use this function to update the plot
-
-   // Update congress
-   	d3.select("#congress_num").text(congress_num);
 
 	var colors = []; //for the legend
 
@@ -107,7 +87,6 @@ function populateScatter(x, y, congress_num=114){
 	svg.selectAll(".dot") //.dot is class, dot is string
 		.data(data).enter()
 		.append("circle")
-			.filter(function(d) {return d.congress_number == congress_num})
 			.attr("class", "dot")
 			.attr("r", 5)
 			.attr("cx", function(d) { return x(+d.x_dimension); })
@@ -140,16 +119,17 @@ function populateScatter(x, y, congress_num=114){
 		.attr("x", width - 24)
 		.attr("y", 9)
 		.attr("dy", ".35em")
+		// .style("font-family", "sans-serif")
+		// .style("font-size", "20px")
 		.style("text-anchor", "end")
 		.text(function(d) { return legend_dict[d]; });
 }
 
 //runs on load
-d3.csv('data/congress_data.csv')	// read in data, pass ->
+d3.csv('data/congress_data114.csv')	// read in data, pass ->
 	.then(function(d) {     // name the data 'd'
 		init(d)				// call init function, feed 'd'
 	})
 	.catch(function(error){
 		console.log('ERROR:', error)	
 	})
-

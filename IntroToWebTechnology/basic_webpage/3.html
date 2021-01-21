@@ -5,10 +5,18 @@
   body {
     color:red;
   }
+  .blueclass{/*Class is for use on many things*/
+    color:blue
+  }
+  #greenid{/*id is for use on few things -- overrides class*/
+    color:green
+  }
 </style>
 
 <body>
-  Stuff you see goes here
+  <p>Stuff you see goes here</p>
+  <p><span class=blueclass>Stuff <span id=greenid>you</span> see goes here</span></p>
+
 </body>
 
 <script>
