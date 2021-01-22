@@ -15,14 +15,21 @@ function drawScene(){
 	var extent = [params.colorMapMin, params.colorMapMax];
 	cmap.domain(extent).nice();
 
+	// Add data points to geometry (to be added to mesh which is added to scene)
 	params.data.forEach(function(d){
-		geometry.vertices.push( new THREE.Vector3( d.x, d.y, d.z ) );
+		// filter by year, type
+		if (d.t < params.age && d.type == params.type) {
+			geometry.vertices.push( new THREE.Vector3( d.x, d.y, d.z ) );
 
-		//color by distance
-		dist = Math.sqrt(d.x*d.x + d.y*d.y + d.z*d.z);
-		geometry.colors.push(new THREE.Color(cmap(dist)));
+			//color by distance
+			// dist = Math.sqrt(d.x*d.x + d.y*d.y + d.z*d.z);
+			// geometry.colors.push(new THREE.Color(cmap(dist)));
 
-		
+			//color by luminosity
+			lum = d.log10lum;
+			geometry.colors.push(new THREE.Color(cmap(lum)));
+		}
+			
 	});
 
 

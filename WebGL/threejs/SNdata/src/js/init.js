@@ -63,7 +63,14 @@ d3.csv('src/data/OpenSNCatConverted.csv')
 	.then(function(d) {
 		defineParams();
 		params.data = d;
-		console.log(d);
+		params.ageRange = d3.extent(params.data, function(d) {
+			return +d.t;});
+		params.type_set = new Set()
+
+		console.log(params.data['type']);
+
+		params.type_set.add(params.data['type'])
+		console.log(params.type_set)
 		WebGLStart();
 	})
 	.catch(function(error){

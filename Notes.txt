@@ -66,7 +66,20 @@
 #####################
 
     Interactive visualization with GII data
-        - Bokeh -- see Bokey_exercises
+        - Bokeh or GLUE
         - create Ashby plots (open circle) with any two variables
         - be able to click on stuff to get more info
+        - selectively load data by slider (based on anion, transition metal n, )
+
+    3 levels
+        - Minimum working product
+        - Realistic product
+        - Reach goal
+    
+    Tool for visualizing DFT stuff
+        - relaxation?
+        - phonons modes?
+
+
+
 
