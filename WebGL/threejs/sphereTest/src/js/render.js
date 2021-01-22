@@ -1,7 +1,7 @@
 //all "global" variables are contained within params object
 var params;
 function defineParams(){
-	params = new function() {
+	params = new function() { //way of defining a "class" (called a function) in js
 
 		this.container = null;
 		this.renderer = null;
@@ -27,11 +27,12 @@ function defineParams(){
 		this.thetaLength = Math.PI;
 		this.material = new THREE.MeshBasicMaterial( {color: 0xffff00} );
 
-		this.drawSphere = function(){
+		// refresh function
+		this.drawSphere = function(){ //function without a function (class)
 			//sphere geometry
 			if (params.sphere != null){
-				params.scene.remove(params.sphere);
-			}
+				params.scene.remove(params.sphere); //remove
+			}//recreate
 			var geometry = new THREE.SphereGeometry(params.radius, params.widthSegments, params.heightSegments, params.phiStart, params.phiLength, params.thetaStart, params.thetaLength)
 			params.sphere = new THREE.Mesh( geometry, params.material );
 			params.scene.add( params.sphere );
@@ -49,7 +50,7 @@ function init(){
 	var screenHeight = window.innerHeight;
 	var aspect = screenWidth / screenHeight;
 
-	// renderer
+	// renderer -- THREE, THREEx come from import in index.html
 	params.renderer = new THREE.WebGLRenderer( {
 		antialias:true,
 	} );
@@ -77,7 +78,7 @@ function init(){
 }
 
 //this creates the user interface (gui)
-//http://workshop.chromeexperiments.com/examples/gui
+//http://workshop.chromeexperiments.com/examples/gui -- outdated - see repo
 function createUI(){
 
 	params.gui = new dat.GUI();
