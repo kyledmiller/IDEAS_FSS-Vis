@@ -72,9 +72,10 @@
         - selectively load data by slider (based on anion, transition metal n, )
 
     3 levels
-        - Minimum working product
-        - Realistic product
-        - Reach goal
+        - Minimum product	: Plot X vs GII, color by anion, toggleable legend
+        - Realistic product	: Dropdown boxes for plotting any variable against any other
+        - Reach goal		: Configurable coloring (color by X varirable
+				: 3D plot, KDE, built-in clustering 
     
     Tool for visualizing DFT stuff
         - relaxation?
