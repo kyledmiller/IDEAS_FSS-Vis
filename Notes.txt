@@ -74,8 +74,9 @@
     3 levels
         - Minimum product	: Plot X vs GII, color by anion, toggleable legend
         - Realistic product	: Dropdown boxes for plotting any variable against any other
-        - Reach goal		: Configurable coloring (color by X varirable
-				: 3D plot, KDE, built-in clustering 
+        - Reach goal		: Configurable coloring (color by X varirable)
+	                        : 3D plot, KDE, built-in clustering 
+                            : double-sided slider for range of atomic numbers for transition metal
     
     Tool for visualizing DFT stuff
         - relaxation?
