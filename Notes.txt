@@ -65,19 +65,29 @@
 ### Project Ideas ###
 #####################
 
-    Interactive visualization with GII data
-        - Bokeh or GLUE
-        - create Ashby plots (open circle) with any two variables
-        - be able to click on stuff to get more info
-        - selectively load data by slider (based on anion, transition metal n, )
+    maybe Plotly?, 
+
+    Interactive Bokeh visualization with GII data
+        - We want to easily explore this data and its many potential subsets.
+        - We want to be able to compare characteristics of these subsets across variables.
 
     3 levels
-        - Minimum product	: Plot X vs GII, color by anion, toggleable legend
-        - Realistic product	: Dropdown boxes for plotting any variable against any other
-        - Reach goal		: Configurable coloring (color by X varirable)
-	                        : 3D plot, KDE, built-in clustering 
-                            : double-sided slider for range of atomic numbers for transition metal
-    
+        1. Minimum product	
+            - Plot X vs Y                               (Bokeh)
+            - Color by anion                            (Bokeh)
+            - Toggleable legend                         (Bokeh)
+
+        2. Realistic product	
+            - Configurable coloring                                             (Bokeh)
+            - Checkbox selector for tmetals, anions, spacegroups, crystal sys   (Bokeh)
+            - Population plots next to it                                       (Bokeh)
+
+        3. Reach goals		
+            - Customize how many plots are shown            (?)
+            - KDE buttons                                   (?)
+            - Checkbox selector in shape of periodic table  (probably D3)
+
+
     Tool for visualizing DFT stuff
         - relaxation?
         - phonons modes?
