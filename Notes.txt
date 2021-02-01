@@ -92,6 +92,40 @@
         - relaxation?
         - phonons modes?
 
+### Presentation Outline ###
+
+    Context (Materials Project website)
+        - As in many fields, there is a kind of data explosion occurring in materials science.
+        - Databases such as this one here called the Materials project have enormous numbers of observations on enormous numbers of materials.
+
+        - The rise of these databases has in many ways outpaced our ability to make meaningful analyses of all this new data using traditional methods.
+        - We need new tools which allow us to put this mountain of data to work answering both old but important questions and new, exciting questions in our field.
+        - A few such questions include:
+
+            1. How do materials properties vary by their atomic components?
+            1. Where should we look for new compounds with X characteristic?
+            1. What can we learn from the relationships between known materials properties?
+            1. What can we learn from the distributions of materials properties?
+            1. Where are we lacking materials data?
+
+        - The visualization tool I've created here, called the High-Dimensional Materials Data Explorer provides a way for researchers to simultaneously consider many materials properties for many different compounds.
+
+        - The main features here are the two scatter plots with configurable axes, meaning we can plot any property versus any other property in the data set.
+        - On the edges of each scatterplot we show a kernel density estimate to give us an idea of the distribution of data in each dimension.
+        - The data displayed here has different categories (corresponding to the anion) separated visually by color and marker style. By clicking on the legend entries, the user can customize which categories are displayed on the plot.
+        - We can pan and zoom each plot and the KDE plots will respond appropriately
+        - The tooltip gives some basic info about each data point
+        - And finally, we can utilize linked brushing between these two plots. So if I'm plotting different things on each plot, I can select data and see it highlighted on the other plot
+
+        - To create this tool, I used the Python package Bokeh.
+        - Since a lot of crystal structure manipulation tools and databases have good integration with Python, I used Bokeh to maintain that Python pipeline from data import to visualization
+        - You may notice, however, that this tool is just an html file
+        - By choosing to create all of the interactive features using embedded JavaScript rather than Python, I've produced a final product which is fully portable and requires only a web browser to use.
+        - Ultimately, I hope this tool provides a canvas on which materials researchers can project their existing chemical and physical intuition onto any organized trove of observations either from their own work or scraped from one of the many databases.
+        - Furthermore, The portability and minimal system requirements enables researchers to easily share their visualizations and thereby leverage the materials intuition and feedback of a wider community.
+
+
+
 
 
 
